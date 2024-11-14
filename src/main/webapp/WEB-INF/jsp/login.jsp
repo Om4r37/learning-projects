@@ -1,16 +1,20 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: o
-  Date: 11/12/24
-  Time: 11:47 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+  <title>login</title>
+</head>
+<body>
+<h1>login</h1>
+<a href="register">register</a>
+<form action = "login" method = "POST">
+  email: <input type = "email" name = "email"><br>
+  password: <input type = "password" name = "password"><br>
+  <input type = "submit" value = "Submit"><br>
+  <span id="error" style="display: none;">invalid email or password.</span>
+</form>
+<script>
+  if (${error}) document.getElementById("error").style.display = "inline";
+</script>
+</body>
 </html>

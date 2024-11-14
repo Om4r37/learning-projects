@@ -9,6 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class MyApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
+		DB.init();
 		SpringApplication.run(MyApplication.class, args);
 	}
 
