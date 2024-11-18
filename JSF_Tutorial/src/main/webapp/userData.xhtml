@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<head>
+    <title>index</title>
+    <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body>
+<h:form>
+    <h:commandButton action="register?faces-redirect=true" value="Register"/>
+    <h:commandButton action="login?faces-redirect=true" value="Login"/>
+</h:form>
+<h1>User Data</h1>
+<h:outputText value="No users found" rendered="#{userData.getUsers().isEmpty()}"/>
+<h:form rendered="#{!userData.getUsers().isEmpty()}">
+<h:dataTable value = "#{userData.users}" var="user"
+             styleClass = "userTable"
+             headerClass = "userTableHeader"
+             rowClasses = "userTableOddRow,userTableEvenRow">
+
+    <h:column>
+        <f:facet name = "header">Name</f:facet>
+        #{user.username}
+    </h:column>
+
+    <h:column>
+        <f:facet name = "header">Status</f:facet>
+        <h:outputText value="#{user.status}" rendered="#{user.status == 2}"/>
+        <h:inputText id="status" value="#{user.status}" rendered="#{!(user.status == 2)}"
+                     onkeypress="if(event.which &lt; 49 || event.which &gt; 50) return false;"
+                     validatorMessage="allowed values: 1, 2.">
+            <f:validateLength minimum = "1" maximum = "1" />
+        </h:inputText>
+        <h:message for="status" style="color:red"/>
+    </h:column>
+
+</h:dataTable>
+    <h:commandButton action="index?faces-redirect=true" value="Go Back"/>
+    <h:commandButton value = "Save Employees" action="#{userData.save}" />
+    <br/><h:outputText value="#{userData.message}"/>
+</h:form>
+</body>
+</html>
