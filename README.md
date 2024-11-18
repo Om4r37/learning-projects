@@ -1,20 +1,3 @@
-# spring-boot-jsp-demo
-
-This spring-boot application describes how to use JSP as a view technology when deploying as a standalone self-executing WAR file. The important thing to note is that the application is packaged as a WAR file but can still be run with `java -jar ...`
-
-# Requirements
-
-- JDK 21 or higher
-
-# Compiling/Packaging
-
-```
-./mvnw clean package
-```
-
-# Running
-
-```
-java -jar target/jspdemo-1.0.0.war
-```
-
+- [spring-boot-jsp-jdbc](https://github.com/Om4r37/learning-projects/tree/spring-boot-jsp-jdbc)
+- [spring-boot-jsp-jpa-docker](https://github.com/Om4r37/learning-projects/tree/spring-boot-jsp-jpa-docker)
+- [jsf-jdbc](https://github.com/Om4r37/learning-projects/tree/jsf-jdbc)
