@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/templates/template.xhtml">
+    <ui:define name="title">hello from index</ui:define>
+    <ui:define name="content">
+        <h:form>
+            <h:outputText value="hello from jsf2"/><br/>
+            <h:outputText value="#{helloBean.message}"/><br/>
+            <h:inputText id="name" value="#{helloBean.message}"/><br/>
+        </h:form>
+        <h:form>
+            <h:commandButton value="Say Hello" action="#{helloBean.sayHello}"/>
+            <h:commandButton value="Read From DB" action="#{helloBean.readFromDB}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

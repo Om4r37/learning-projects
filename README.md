@@ -1,3 +1,6 @@
-- [spring-boot-jsp-jdbc](https://github.com/Om4r37/learning-projects/tree/spring-boot-jsp-jdbc)
-- [spring-boot-jsp-jpa-docker](https://github.com/Om4r37/learning-projects/tree/spring-boot-jsp-jpa-docker)
-- [jsf-jdbc](https://github.com/Om4r37/learning-projects/tree/jsf-jdbc)
+# jsf 4 hello world
+
+- using tomcat 10
+
+### todo:
+- [] add css
