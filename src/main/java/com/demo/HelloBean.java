@@ -1,10 +1,10 @@
 package com.demo;
 
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 
 @Named("helloBean")
-@RequestScoped
+@SessionScoped
 public class HelloBean {
     private String message =  "Hello from bean";
     public String getMessage() { return message; }
