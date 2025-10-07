@@ -6,10 +6,18 @@
 <head>
     <title>register</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css"/>
 </head>
 <body>
+    <header>
+    <nav>
+        <ul>
+            <li><a href="login">login</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
 <h1>register</h1>
-<a href="login">login</a>
 <form:form action="register" modelAttribute="user" method="post">
     <label>Email:</label>
     <form:input path="email" type="email"/><br>
@@ -38,5 +46,6 @@
     <form:errors path="passwordMatch" cssClass="error"/><br>
     <input type="submit" value="Submit"><br>
 </form:form>
+</main>
 </body>
 </html>
