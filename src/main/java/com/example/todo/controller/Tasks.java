@@ -57,7 +57,7 @@ public class Tasks {
     public static String updateTask(@ModelAttribute("task") Task task, @CookieValue(name = "id", defaultValue = "0") String id) {
         if (id.equals("0") || !CookieSigner.verify(id.split(":")[0], id.split(":")[1])) return "redirect:/";
         String query = "UPDATE tasks SET content = ? WHERE user_id = ? AND id = ?";
-        DB.execute(query, task.getContent(), id, task.getId());
+        DB.execute(query, task.getContent(), id.split(":")[0], task.getId());
         return "redirect:/tasks";
     }
 }
