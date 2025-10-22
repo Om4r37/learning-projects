@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/userLayout}">
+<head>
+    <title layout:fragment="title">tasks</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h1 style="text-align: center;">📋My Tasks</h1>
+    <article>
+        <table>
+            <thead>
+            <tr>
+                <th>Task</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${#lists.isEmpty(tasks)}">
+                <td colspan="3">There are no tasks currently.</td>
+            </tr>
+            <tr th:each="task : ${tasks}">
+                <td th:text="${task.content}">Task text</td>
+                <td><a role="button" th:href="@{/update-task(taskId=${task.id})}">✏️ edit</a></td>
+                <td><a role="button" th:href="@{/delete-task(taskId=${task.id})}">🗑 delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+</main>
+
+</body>
+</html>

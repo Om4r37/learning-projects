@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/userLayout}">
+<head>
+    <title layout:fragment="title">edit task</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <article>
+        <h3>edit task</h3>
+        <form action="/update-task" th:object="${task}" method="post">
+            <input type="hidden" name="id" th:value="${task.id}">
+            Task: <input type="text" th:field="*{content}"/>
+            <input type="submit" value="Submit"/>
+            <a role="button" href="/">Cancel</a>
+        </form>
+    </article>
+</main>
+</body>
+</html>

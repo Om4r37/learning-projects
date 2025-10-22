@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/guestLayout}">
+<main layout:fragment="content">
+    <article>
+        <h1 th:text="${message}">Default Message</h1>
+    </article>
+</main>
+</body>
+</html>

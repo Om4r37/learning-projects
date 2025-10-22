@@ -1,0 +1,8 @@
+form a[role="button"] {
+    display: block;
+}
+
+article:not(:has(table)) {
+    max-width: 700px;
+    margin-inline: auto;
+}
